@@ -1,0 +1,11 @@
+header {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    background-color: #639465;
+}
+
+.wrap {
+    margin: 50px;
+}
+
