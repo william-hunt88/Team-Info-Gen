@@ -7,3 +7,27 @@ test('creates and employee', () => {
     expect(employee.id).toBe(537);
     expect(employee.email).toBe('dave@davesmail.com')
 });
+
+test('get employee name', () => {
+    const employee = new Employee('Dave')
+
+    expect(employee.getName()).toBe('Dave');
+});
+
+test('get employee id', () => {
+    const employee = new Employee('Dave', 15)
+
+    expect(employee.getId()).toBe(15);
+});
+
+test('get employee email', () => {
+    const employee = new Employee('Dave', 15, 'dave@davesmail.com')
+
+    expect(employee.getEmail()).toBe('dave@davesmail.com');
+});
+
+test('get employee role', () => {
+    const employee = new Employee()
+
+    expect(employee.getRole()).toBe('Employee');
+});

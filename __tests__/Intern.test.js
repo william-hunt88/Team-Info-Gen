@@ -10,3 +10,14 @@ test('Creates new intern', () => {
 
 })
 
+test('get Interns role', () => {
+    const intern = new Intern()
+
+    expect(intern.getRole()).toBe('Intern');
+});
+
+test('get Interns School', () => {
+    const intern = new Intern('Dave', 537, 'dave@davesmail.com', "MTSU")
+
+    expect(intern.school).toBe('MTSU')
+})

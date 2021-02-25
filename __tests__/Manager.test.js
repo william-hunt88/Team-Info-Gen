@@ -7,5 +7,11 @@ test('Creates new manager', () => {
     expect(manager.id).toBe(537);
     expect(manager.email).toBe('dave@davesmail.com');
     expect(manager.officeNumber).toBe(15);
+});
+
+test('get Managers role', () => {
+    const manager = new Manager;
+
+    expect(manager.getRole()).toBe('Manager')
 
 })
