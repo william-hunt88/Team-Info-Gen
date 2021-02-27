@@ -1,4 +1,4 @@
-const Manager = require('../lib/Manager')
+const Manager = require("../lib/Manager");
 var html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -13,83 +13,86 @@ var html = `
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header><h1>My Team</h1></header>
-    <main class="d-flex justify-content-center">
-      <div class="row wrap">`
+    <header class = 'bg-info'><h1>My Team</h1></header>
+    <main class = 'wrap'>
+      <div class="container">
+        <div class="row justify-content-center">`;
 
-function createHtml (arr) {
-  for(var i = 0; i < arr.length; i++){
-    var role = arr[i].getRole()
-    switch(role) {
+function createHtml(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var role = arr[i].getRole();
+    switch (role) {
       case "Manager":
-        managerCard(arr[i])
+        managerCard(arr[i]);
         break;
-      case 'Intern':
-      internCard(arr[i])
+      case "Intern":
+        internCard(arr[i]);
         break;
       default:
-        engineerCard(arr[i])
+        engineerCard(arr[i]);
     }
   }
-  return html +=       `</div>
-                    </main>
-                  </body>
-                </html>`
-};
-
-function managerCard (manager) {
-
-  html += `        <div class="card justify-center info-card">
-  <div class="card-body">
-    <h4 class="card-title">${manager.name}</h4>
-    <h5 class="card-subtitle">Manager</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${manager.id}</li>
-      <li class="list-group-item">${manager.officeNumber}</li>
-      <li class="list-group-item">${manager.email}</li>
-    </ul>
+  return (html += `        </div>
   </div>
-</div>`
-};
-
-function engineerCard (engineer) {
-
-  html += `        <div class="card justify-center info-card">
-  <div class="card-body">
-    <h4 class="card-title">${engineer.name}</h4>
-    <h5 class="card-subtitle">Engineer</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${engineer.id}</li>
-      <li class="list-group-item">${engineer.officeNumber}</li>
-      <li class="list-group-item">${engineer.email}</li>
-    </ul>
-  </div>
-</div>`
-};
-
-function internCard (intern) {
-
-  html += `        <div class="card justify-center info-card">
-  <div class="card-body">
-    <h4 class="card-title">${intern.name}</h4>
-    <h5 class="card-subtitle">Intern</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${intern.id}</li>
-      <li class="list-group-item">${intern.school}</li>
-      <li class="list-group-item">${intern.email}</li>
-    </ul>
-  </div>
-</div>`
+  <footer class = 'bg-info'></footer>
+</main>
+</body>
+</html>`);
 }
 
+function managerCard(manager) {
+  html += `                  <div class="col-4">
+  <div class="card shadow rounded">
+    <div class = "card-header bg-info">
+      <h4><i class="bi bi-cup"></i>${manager.name}</h4>
+      <img src='./images/cup.svg'>
+      <h5>Manager</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item ">ID: ${manager.id}</li>
+      <li class="list-group-item ">Email: ${manager.email}</li>
+      <li class="list-group-item ">Office: ${manager.officeNumber}</li>
+    </ul>
+  </div>
+</div>`;
+}
 
+function engineerCard(engineer) {
+  html += `                  <div class="col-4">
+  <div class="card shadow rounded">
+    <div class = "card-header bg-info">
+      <h4>${engineer.name}</h4>
+      <img src='./images/tools.svg'>
+      <h5>Engineer</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item ">ID: ${engineer.id}</li>
+      <li class="list-group-item ">Email: ${engineer.email}</li>
+      <li class="list-group-item ">Github: ${engineer.github}</li>
+    </ul>
+  </div>
+</div>`;
+}
 
-// function to take in array of employees/ all employees. each employee it runs getRole(). if manager, call generate manager, if engineer etc.
-
-// 3 functions for creating template literals for Manager info and Secondary employee info
-
-
+function internCard(intern) {
+  html += `                  <div class="col-4">
+  <div class="card shadow rounded">
+    <div class = "card-header bg-info">
+      <h4>${intern.name}</h4>
+      <img src='./images/pencil.svg'>
+      <h5>Intern</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item ">ID: ${intern.id}</li>
+      <li class="list-group-item ">Email: ${intern.email}</li>
+      <li class="list-group-item ">School: ${intern.school}</li>
+    </ul>
+  </div>
+</div>`;
+};
 
 module.exports = createHtml;
