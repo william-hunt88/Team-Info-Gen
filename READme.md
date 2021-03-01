@@ -1,7 +1,7 @@
  # Team Info Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-  <img href = "./Team-Info-Gen.png" >
+  <img src = "./Team-Info-Gen.png" >
   
   ### Table of Contents
   * [Description](#project-description)
