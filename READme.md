@@ -19,7 +19,7 @@
   Clone this repo and run from the command line. First step is to run the command "npm install" and then you're set. Run command index.js and answer away!
 
   ### Usage
-  [![demo video](http://img.youtube.com/vi/xqbW8Stm7Pk/0.jpg)](http://www.youtube.com/watch?v=xqbW8Stm7Pk "demo video")
+  [![demo video](./Team-Info-Gen.png)](http://www.youtube.com/watch?v=xqbW8Stm7Pk "demo video")
 
   ### Contributions
   Contributions are welcome.
