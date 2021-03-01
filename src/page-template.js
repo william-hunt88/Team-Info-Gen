@@ -1,4 +1,5 @@
 const Manager = require("../lib/Manager");
+// top of HTML, before appended cards, to be used for concatenation with custom cards
 var html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +24,11 @@ var html = `
         <div class="row justify-content-center">`;
 
 function createHtml(arr) {
+  // loop thru array of employee info objects
   for (var i = 0; i < arr.length; i++) {
+    // call getRole() to get the current employees position
     var role = arr[i].getRole();
+    // the proper object is chosen and passed in as an argument when calling the proper card building function
     switch (role) {
       case "Manager":
         managerCard(arr[i]);
@@ -36,12 +40,13 @@ function createHtml(arr) {
         engineerCard(arr[i]);
     }
   }
-  return (html += `        </div>
-  </div>
-  <footer class = 'bg-info'></footer>
-</main>
-</body>
-</html>`);
+  // html is concatenated using html variable that is updated in the card building function
+  return (html += ` </div>
+                  </div>
+                <footer class = 'bg-info'></footer>
+              </main>
+            </body>
+          </html>`);
 }
 
 function managerCard(manager) {
