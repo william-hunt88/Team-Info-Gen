@@ -6,11 +6,6 @@ const Intern = require("./lib/Intern");
 const fs = require('fs')
 const createHtml = require('./src/page-template.js')
 const path = require('path')
-      
-const mock = [
-
-]
-
 
 // prompts for managers 'Name', 'ID', 'Email', 'Office Number'
 function managerPrompt() {
